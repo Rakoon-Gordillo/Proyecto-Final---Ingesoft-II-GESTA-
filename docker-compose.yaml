@@ -1,0 +1,17 @@
+services:
+  postgredb:
+    image: postgres:19
+    container_name: postgredb
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: qwerty
+      POSTGRES_DB: gesta_db
+    ports:
+      - "9041:5432"
+    volumes:
+      - volpostgres:/var/lib/postgresql
+
+volumes:
+  volpostgres:
+    name: volpostgres
